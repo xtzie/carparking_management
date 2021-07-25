@@ -1,21 +1,16 @@
-===============================================================================
-Read Me First
-
-===============================================================================
-
 after repo is cloned, how do you run it?
 how do you use? - change configuration and change price, change test files etc.
 running the default and using is separate
 
 
-Files
+## Files
 1. carparking_main.py: Main file with Carpark() class
 2. carparking_main_test.py: File to run unit tests for carparking_main.py
 3. sample_input.txt: Sample input for carparking_main.py
 4. unit_test: Folder of unit tests to test program functionality
 5. result_unit_test: Folder of expected results of unit tests
 
-Usage
+## Usage
 1. Run file in the python3 environment:
 python3 carparking_main.py --Car_Parking_File 'your_Car_Parking_File.txt'
 2. To run unit tests:
