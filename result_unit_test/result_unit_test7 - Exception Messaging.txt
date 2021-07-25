@@ -1,0 +1,5 @@
+line2 ERROR: Maximum 4 variables expected, received: 5
+line3 ERROR: Minimum 3 variables expected, received: 2
+line4 ERROR: Time not in number format, received: 1:10pm
+line5 ERROR: Inconsistent input format.
+line6 ERROR: Vehicle type not correctly specified, received: truck

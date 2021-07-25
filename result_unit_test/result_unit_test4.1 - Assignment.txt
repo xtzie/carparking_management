@@ -1,0 +1,12 @@
+Accept MotorcycleLot1
+Accept MotorcycleLot2
+Accept MotorcycleLot3
+Accept MotorcycleLot4
+MotorcycleLot2 1
+Accept MotorcycleLot2
+Accept CarLot1
+Accept CarLot2
+Accept CarLot3
+Accept CarLot4
+CarLot2 2
+Accept CarLot2

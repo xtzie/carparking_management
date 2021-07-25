@@ -1,0 +1,6 @@
+Accept MotorcycleLot1
+Accept MotorcycleLot2
+Reject
+Accept CarLot1
+Accept CarLot2
+Reject
