@@ -1,6 +1,6 @@
 ## Requirements
 - Ubuntu 16.04 or later
-- Python 3 or later
+- Python 3.6 or later
 - Additional Python library: ```hypothesis```
 
 ## Installation of Additional Library
