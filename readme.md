@@ -1,13 +1,17 @@
 ## Requirements
 - Ubuntu 16.04 or later
 - Python 3 or later
-- Hypothesis property testing library
+- Optional additional library: hypothesis
 
-## Install Additional Libraries
+## (Optional) Install Additional Libraries
+Hypothesis lets you write tests which are parametrized by a source of examples.  
+To install, in the command line run:
 ```pip install hypothesis```
 
 ## Bootstrap Usage
-```python3 carparking_main.py -file "your_Car_Parking_File.txt"```   
+In the command line run:
+```python3 carparking_main.py -file "your_Car_Parking_File.txt"```  
+  
 Refer to ```sample_input.txt``` for example of data format.
 
 # Property Testing
@@ -17,17 +21,6 @@ Testing program based on expected function properties.
 ## Golden testing
 Testing program with stored output.  
 ```python3 carparking_main_golden_testing.py```   
-
-Define carpark_attributes variables in ```config.json5```   
-Attributes in the form: ```[vehicle_type: str, lots_available: int, fees: int]```
-```
-{
-  "carpark_attributes": [
-    ["car", 3, 2],
-    ["motorcycle", 4, 1]
-  ]
-} 
-```
 
 ## Files
 1. carparking_main.py: Main file with Carpark() class
