@@ -38,19 +38,24 @@ OR
 6. Input other than "Car"/"Motorcycle" (e.g "Bus") : line skipped.
 7. Exiting vehicle not existing in car park: line skipped.
 
-## Property Testing
-Testing program based on expected function properties. In the command line run:  
-```python3 carparking_main_golden_testing.py```  
-  
-Example of property test:  
-  
-```some function```  
-
 ## Golden Testing
 Testing program with stored output. In the command line run:  
 ```python3 carparking_main_golden_testing.py```   
   
-Tests are stored in ```golden_unit_test_result``` folder  
+Tests are stored in ```golden_unit_test_result``` folder
+
+## Property Testing
+Testing program based on expected function properties. In the command line run:  
+```python3 property_testing.py```
+
+Example of property test:  
+  
+```
+@ given(st.characters(), st.integers(min_value=0, max_value=100000))
+    def reject_when_full(plate, time):
+        carpark1.vehicle_entry('car', plate, time)
+        assert sum(carpark1.lotsAvailability['car']) == 100
+```  
 
 ## Existing Extensibility
 1. Space time complexity of o(k) for n inputs, with k being total number of vehicle lots.

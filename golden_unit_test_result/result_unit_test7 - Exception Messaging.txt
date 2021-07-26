@@ -1,5 +1,6 @@
 line2 ERROR: Maximum 4 variables expected, received: 5
 line3 ERROR: Minimum 3 variables expected, received: 2
 line4 ERROR: Time not in number format, received: 1:10pm
-line5 ERROR: Inconsistent input format.
-line6 ERROR: Vehicle type not correctly specified, received: truck
+line5 ERROR: Not able to process inputs. received:['Season_Entry', 'car', 'SGP2937F', '1613546029']
+Rejected entry for SGX1234A. Carpark does not allow for this vehicle type: truck
+Rejected exit. Vehicle SGP2937F does not exist!

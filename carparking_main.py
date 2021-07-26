@@ -13,12 +13,17 @@ class Carpark:
 
         for details in carpark_attribute_map:
             vehicle_type, lots, fees = details
-            assert lots >= 0, "Number of vehicle lots cannot be negative"
-            assert fees >= 0, "Fees cannot be negative"
+            # assert lots >= 0, "Number of vehicle lots cannot be negative"
+            # assert fees >= 0, "Fees cannot be negative"
             self.lotsAvailability[vehicle_type] = [0] * lots
             self.feeMap[vehicle_type] = fees
 
     def vehicle_entry(self, vehicle_type, plate, time_in):
+
+        # ignore unidentifiable vehicles
+        if plate == '':
+            return
+
         try:
             vehicle_availability = self.lotsAvailability[vehicle_type]
         except Exception as e:
@@ -35,7 +40,17 @@ class Carpark:
         statement = f'Accept {vehicle_type.capitalize()}Lot{assigned_idx + 1}'
         print(statement)
 
+    def calculate_billable_blocks(self, time_delta):
+        billable_blocks = (time_delta // self.FeeTimeBLock + (time_delta % self.FeeTimeBLock >= 0))
+        return billable_blocks
+
+
     def vehicle_exit(self, plate, time_out):
+
+        # ignore unidentifiable vehicles
+        if plate == '':
+            return
+
         try:
             assigned_lot, time_in, vehicle_type = self.vehicleMap.pop(plate)
         except:
@@ -43,13 +58,12 @@ class Carpark:
             return
 
         time_delta = time_out - time_in
-
         if time_delta < 0:
             print(f'Rejected exit. Vehicle {plate} exit time of {time_out} earlier than entry time of {time_in}.')
             return
 
-        billable_time = (time_delta // self.FeeTimeBLock + (time_delta % self.FeeTimeBLock >= 0))
-        billed = self.feeMap[vehicle_type] * billable_time
+        billable_blocks = self.calculate_billable_blocks(time_delta)
+        billed = self.feeMap[vehicle_type] * billable_blocks
         self.lotsAvailability[vehicle_type][assigned_lot] = 0
 
         statement = f'{vehicle_type.capitalize()}Lot{assigned_lot + 1} {billed}'

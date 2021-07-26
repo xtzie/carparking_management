@@ -1,4 +1,4 @@
 Accept MotorcycleLot1
 Accept CarLot1
-ERROR: Vehicle SGF9283FZZZ does not exist!
-ERROR: Vehicle SGX1234AZZZ does not exist!
+Rejected exit. Vehicle SGF9283FZZZ does not exist!
+Rejected exit. Vehicle SGX1234AZZZ does not exist!
