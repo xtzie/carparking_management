@@ -14,12 +14,6 @@ In the command line run:
   
 Refer to ```sample_input.txt``` for example of data format.
 
-## Production Usage
-In the command line run:  
-```python3 carparking_main.py -production```  
-  
-1. Initiates ```Carpark()``` class with attributes from ```config.json5```
-2. Accepts inputs then prints out return values  
 ## Property Testing
 Testing program based on expected function properties. In the command line run:  
 ```python3 carparking_main_golden_testing.py```  
@@ -34,23 +28,14 @@ Testing program with stored output. In the command line run:
   
 Tests are stored in ```golden_unit_test_result``` folder  
 
-## Usage
-1. Run file in the python3 environment:
-python3 carparking_main.py --Car_Parking_File 'your_Car_Parking_File.txt'
-2. To run unit tests:
-python3 carparking_main_test.py
-3. To run from API:
-from carparking_main import *
-setup
+## Implementation Assumptions
 
-
-Input File Attributes
-1. File should be in .txt format
-2. First line in format of: int int
-3. Subsequent lines should be in string format:
-'Enter Vehicle Type Plate_Number Time'
-OR
-'Exit Plate_Number Time'
+**Expected Input File Attributes:**
+1. First line in format of: ```int int```
+2. Subsequent lines should be in string format:  
+```"Enter vehicle_type plate_number time"```  
+OR  
+```"Exit plate_number time"```  
 
 Input File Assumptions
 1. Format is as above.
@@ -58,28 +43,21 @@ Input File Assumptions
 3. Entries and exits are sorted in ascending order.
 4. Time in and out is formatted in seconds.
 
+## Existing Extensibility
+1. Space time complexity of o(k) for n inputs, with k being total number of vehicle lots.
+2. Time complexity of o(n * k) for n inputs, with k being total number of vehicle lots.
+3. Can instantiate with additional vehicle types and corresponding attributes.
 
-===============================================================================
-Implementation Considerations
-
-===============================================================================
-
-Design Extensibility
-1. Variables as object attributes (carFees, hourConversion)
-2. Each vehicle entry as a modular function
- - single data structure
- - streamline functions
- 
-3. Space time complexity of o(1) for n inputs.
-4. Time complexity of o(n * k) for n inputs, with k being total number of vehicle lots.
-5. Able to add / remove / block lots - Status of lots - give distinct open lot
-6. separate configurations file - no code update to production server - maintain code consistency - build to local environment then staging then production (using same source code)
-docker image ensures hash is the same
-yaml json properties file 
+## Future Design Extensibility
+1. Build functionality to add / remove / block lots.
+2. Push output into a database for data persistency
+3. Mount onto docker image for production functionality
 
 
 
-Exception Handling
+
+
+## Bootstrap Exception Handling
 1. Exit time before entry time: Car remains in inventory, exit ignored.
 2. First line inputs not non-negative integers: System exits.
 3. Insufficient or excess variables: line skipped.
@@ -87,4 +65,3 @@ Exception Handling
 5. Input other than "Enter"/"Exit" (e.g "Season_Entry", "Entry") : line skipped.
 6. Input other than "Car"/"Motorcycle" (e.g "Bus") : line skipped.
 7. Exiting vehicle not existing in car park: line skipped.
-8. 
