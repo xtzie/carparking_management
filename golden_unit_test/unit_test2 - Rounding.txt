@@ -1,0 +1,9 @@
+2 2
+Enter motorcycle SGX1234A 10
+Enter motorcycle SGX1234AK 10
+Enter car SGF9283F 10
+Enter car SGF9283FK 10
+Exit SGX1234A 10
+Exit SGF9283F 10
+Exit SGX1234AK 3610
+Exit SGF9283FK 3610
