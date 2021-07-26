@@ -8,12 +8,18 @@ Hypothesis library lets you write tests which are parametrized by a source of ex
 To install, in the command line run:  
 ```pip install hypothesis```
 
-## Bootstrap Usage
+## Bootstrap Data Usage
 In the command line run:  
 ```python3 carparking_main.py -file "your_Car_Parking_File.txt"```  
   
 Refer to ```sample_input.txt``` for example of data format.
 
+## Production Usage
+In the command line run:  
+```python3 carparking_main.py -production```  
+  
+1. Initiates ```Carpark()``` class with attributes from ```config.json5```
+2. Accepts inputs then prints out return values  
 ## Property Testing
 Testing program based on expected function properties. In the command line run:  
 ```python3 carparking_main_golden_testing.py```  
@@ -22,17 +28,11 @@ Example of property test:
   
 ```some function```  
 
-## Golden testing
+## Golden Testing
 Testing program with stored output. In the command line run:  
 ```python3 carparking_main_golden_testing.py```   
   
 Tests are stored in ```golden_unit_test_result``` folder  
-## Files
-1. carparking_main.py: Main file with Carpark() class
-2. carparking_main_test.py: File to run unit tests for carparking_main.py
-3. sample_input.txt: Sample input for carparking_main.py
-4. unit_test: Folder of unit tests to test program functionality
-5. result_unit_test: Folder of expected results of unit tests
 
 ## Usage
 1. Run file in the python3 environment:
