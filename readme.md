@@ -1,27 +1,32 @@
 ## Requirements
 - Ubuntu 16.04 or later
 - Python 3 or later
-- Optional additional library: hypothesis
+- Additional Python library: ```hypothesis```
 
-## (Optional) Install Additional Libraries
-Hypothesis lets you write tests which are parametrized by a source of examples.  
-To install, in the command line run:
+## Install Additional Library
+Hypothesis library lets you write tests which are parametrized by a source of examples.  
+To install, in the command line run:  
 ```pip install hypothesis```
 
 ## Bootstrap Usage
-In the command line run:
+In the command line run:  
 ```python3 carparking_main.py -file "your_Car_Parking_File.txt"```  
   
 Refer to ```sample_input.txt``` for example of data format.
 
-# Property Testing
-Testing program based on expected function properties.
-```python3 carparking_main_golden_testing.py``` 
+## Property Testing
+Testing program based on expected function properties. In the command line run:  
+```python3 carparking_main_golden_testing.py```  
+  
+Example of property test:  
+  
+```some function```  
 
 ## Golden testing
-Testing program with stored output.  
+Testing program with stored output. In the command line run:  
 ```python3 carparking_main_golden_testing.py```   
-
+  
+Tests are stored in ```golden_unit_test_result``` folder  
 ## Files
 1. carparking_main.py: Main file with Carpark() class
 2. carparking_main_test.py: File to run unit tests for carparking_main.py
@@ -83,10 +88,3 @@ Exception Handling
 6. Input other than "Car"/"Motorcycle" (e.g "Bus") : line skipped.
 7. Exiting vehicle not existing in car park: line skipped.
 8. 
-
-Good Programming Practices and Tests
-1. 
-
-Code Packaging & Project Structure
-1. 
-##########error handling should print out stuff
