@@ -6,7 +6,17 @@
 ## Installation of Additional Library
 Hypothesis library lets you write tests which are parametrized by a source of examples.  
 To install, in the command line run:  
-```pip install hypothesis```
+```
+sudo add-apt-repository ppa:deadsnakes/ppa
+sudo apt-get update
+sudo apt-get install python3.6
+sudo apt-get update
+sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.5 1
+sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.6 2
+sudo apt install python3-gdbm
+
+pip install hypothesis
+```
 
 ## Bootstrap Data Usage
 In the command line run:  
