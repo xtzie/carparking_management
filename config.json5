@@ -1,0 +1,6 @@
+{
+  "carpark_attributes": [
+    ["car", 3, 2],
+    ["motorcycle", 4, 1]
+  ]
+}
