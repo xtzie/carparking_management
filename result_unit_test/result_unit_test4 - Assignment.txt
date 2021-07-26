@@ -1,8 +1,0 @@
-Accept MotorcycleLot1
-Accept MotorcycleLot2
-MotorcycleLot1 1
-Accept MotorcycleLot1
-Accept CarLot1
-Accept CarLot2
-CarLot1 2
-Accept CarLot1

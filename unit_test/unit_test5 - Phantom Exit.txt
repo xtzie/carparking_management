@@ -1,5 +1,0 @@
-2 2
-Enter motorcycle SGX1234A 10
-Enter car SGF9283F 10
-Exit SGF9283FZZZ 11
-Exit SGX1234AZZZ 11

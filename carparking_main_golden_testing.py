@@ -1,4 +1,4 @@
-from carparking_main import BootstrapData
+from carparking_main import bootstrap_data
 import sys
 import filecmp
 import os

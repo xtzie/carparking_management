@@ -1,7 +1,0 @@
-2 2
-Enter motorcycle SGX1234A 1613541902 excess
-insufficient 1613541902
-Enter car SGP2937F 1:10pm
-Season_Entry car SGP2937F 1613546029
-Enter truck SGX1234A 1613545602
-Exit SGP2937F 1613546029
