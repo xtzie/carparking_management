@@ -46,7 +46,7 @@ Tests are stored in ```golden_unit_test_result``` folder
 
 ## Property Testing
 Testing program based on expected function properties. In the command line run:  
-```python3 property_testing.py```
+```python3 carparking_main_property_testing.py```
 
 Example of property test:  
   
