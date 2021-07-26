@@ -1,7 +1,33 @@
-after repo is cloned, how do you run it?
-how do you use? - change configuration and change price, change test files etc.
-running the default and using is separate
+## Requirements
+- Ubuntu 16.04 or later
+- Python 3 or later
+- Hypothesis property testing library
 
+## Install Additional Libraries
+```pip install hypothesis```
+
+## Bootstrap Usage
+```python3 carparking_main.py -file "your_Car_Parking_File.txt"```   
+Refer to ```sample_input.txt``` for example of data format.
+
+# Property Testing
+Testing program based on expected function properties.
+```python3 carparking_main_golden_testing.py``` 
+
+## Golden testing
+Testing program with stored output.  
+```python3 carparking_main_golden_testing.py```   
+
+Define carpark_attributes variables in ```config.json5```   
+Attributes in the form: ```[vehicle_type: str, lots_available: int, fees: int]```
+```
+{
+  "carpark_attributes": [
+    ["car", 3, 2],
+    ["motorcycle", 4, 1]
+  ]
+} 
+```
 
 ## Files
 1. carparking_main.py: Main file with Carpark() class
@@ -33,14 +59,6 @@ Input File Assumptions
 2. Vehicle number plates are unique and distinct.
 3. Entries and exits are sorted in ascending order.
 4. Time in and out is formatted in seconds.
-
-Program Flags:
--help: Displays help message
--CPF, --Car_Parking_File: Argument to specify file path to process
-
-Requirements
-1. Python3
-2. Ubuntu 16.04
 
 
 ===============================================================================
