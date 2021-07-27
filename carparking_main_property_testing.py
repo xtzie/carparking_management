@@ -1,11 +1,9 @@
 from hypothesis import given, strategies as st
 from carparking_main import Carpark
 import math
+import sys
 
-
-@ given(st.integers(), st.integers())
-def test_ints_are_commutative(x, y):
-    assert x + y == y + x + 1
+original_stdout = sys.stdout
 
 
 @ given(st.integers(min_value=0, max_value=100000), st.integers(min_value=0, max_value=100000))
@@ -38,7 +36,9 @@ def rounding_to_nearest_hour(time_delta):
     assert blocks == math.floor(time_delta/carpark1.FeeTimeBLock) + 1
 
 if __name__ == '__main__':
-    lots_are_constant()
-    lots_never_exceeded()
-    reject_when_full()
-    rounding_to_nearest_hour()
+    with open('temp.txt', 'w') as w:
+        sys.std = w
+        lots_are_constant()
+        lots_never_exceeded()
+        reject_when_full()
+        rounding_to_nearest_hour()

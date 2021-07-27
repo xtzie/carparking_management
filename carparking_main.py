@@ -26,19 +26,21 @@ class Carpark:
 
         try:
             vehicle_availability = self.lotsAvailability[vehicle_type]
-        except Exception as e:
+        except:
             print(f'Rejected entry for {plate}. Carpark does not allow for this vehicle type: {vehicle_type}')
             return
         try:
             assigned_idx = vehicle_availability.index(0)
         except:
             print('Reject')
-            return
+            return 'Rejected'
 
         vehicle_availability[assigned_idx] = 1
         self.vehicleMap[plate] = [assigned_idx, time_in, vehicle_type]
         statement = f'Accept {vehicle_type.capitalize()}Lot{assigned_idx + 1}'
         print(statement)
+
+        return self.vehicleMap[plate]
 
     def calculate_billable_blocks(self, time_delta):
         billable_blocks = (time_delta // self.FeeTimeBLock + (time_delta % self.FeeTimeBLock >= 0))
@@ -52,22 +54,24 @@ class Carpark:
             return
 
         try:
-            assigned_lot, time_in, vehicle_type = self.vehicleMap.pop(plate)
+            assigned_lot, time_in, vehicle_type = self.vehicleMap[plate]
         except:
             print(f'Rejected exit. Vehicle {plate} does not exist!')
-            return
+            return 'Rejected exit, vehicle does not exist'
 
         time_delta = time_out - time_in
         if time_delta < 0:
-            print(f'Rejected exit. Vehicle {plate} exit time of {time_out} earlier than entry time of {time_in}.')
-            return
+            statement = f'Rejected exit. Vehicle {plate} exit time of {time_out} earlier than entry time of {time_in}.'
+            print(statement)
+            return statement
 
         billable_blocks = self.calculate_billable_blocks(time_delta)
         billed = self.feeMap[vehicle_type] * billable_blocks
         self.lotsAvailability[vehicle_type][assigned_lot] = 0
-
+        self.vehicleMap.pop(plate)
         statement = f'{vehicle_type.capitalize()}Lot{assigned_lot + 1} {billed}'
         print(statement)
+        return [vehicle_type, plate, billed]
 
 
 def bootstrap_data(file_lines):

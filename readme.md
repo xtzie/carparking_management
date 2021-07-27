@@ -1,10 +1,10 @@
 ## Requirements
 - Ubuntu 16.04 or later
 - Python 3.6 or later
-- Additional Python library: ```hypothesis```
+- Additional Python library: ```pytest```, ```hypothesis```
 
 ## Installation of Additional Library
-Hypothesis library lets you write tests which are parametrized by a source of examples.  
+```Pytest``` allows for basic unit testing of functions. ```Hypothesis``` library lets you write tests which are parametrized by a source of examples.  
 To install, in the command line run:  
 ```
 sudo add-apt-repository ppa:deadsnakes/ppa
@@ -16,6 +16,7 @@ sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.6 2
 sudo apt install python3-gdbm
 
 pip install hypothesis
+pip install pytest
 ```
 
 ## Bootstrap Data Usage
