@@ -15,8 +15,8 @@ sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.5 1
 sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.6 2
 sudo apt install python3-gdbm
 
-pip install hypothesis
 pip install pytest
+pip install hypothesis
 ```
 
 ## Bootstrap Data Usage
@@ -48,6 +48,10 @@ OR
 5. Input other than "Enter"/"Exit" (e.g "Season_Entry", "Entry") : line skipped.
 6. Input other than "Car"/"Motorcycle" (e.g "Bus") : line skipped.
 7. Exiting vehicle not existing in car park: line skipped.
+
+## Unit Testing
+In the command line run:  
+```python3 carparking_main_unit_testing.py```   
 
 ## Golden Testing
 Testing program with stored output. In the command line run:  
