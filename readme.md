@@ -1,7 +1,7 @@
 ## Requirements
 - Ubuntu 16.04 or later
 - Python 3.6 or later
-- Additional Python library: ```pytest```, ```hypothesis```
+- Additional Python library: ```pytest```, ```hypothesis```, ```coverage```
 
 ## Installation of Additional Library
 ```Pytest``` allows for basic unit testing of functions. ```Hypothesis``` library lets you write tests which are parametrized by a source of examples.  
@@ -17,6 +17,7 @@ sudo apt install python3-gdbm
 
 pip install pytest
 pip install hypothesis
+pip install coverage
 ```
 
 ## Bootstrap Data Usage
@@ -51,7 +52,13 @@ OR
 
 ## Unit Testing
 In the command line run:  
-```python3 carparking_main_unit_testing.py```   
+```pytest -q carparking_main_unit_testing.py```   
+  
+For coverage testing, in the command line run:  
+```
+coverage run -m pytest -q carparking_main_unit_testing.py
+coverage report
+```   
 
 ## Golden Testing
 Testing program with stored output. In the command line run:  

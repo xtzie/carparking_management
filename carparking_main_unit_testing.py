@@ -1,6 +1,9 @@
 import pytest
-from carparking_main import Carpark
+from carparking_main import Carpark, bootstrap_data
 import math
+import sys
+import filecmp
+import os
 
 # In the format type, lots available, fee per hour
 carpark_attribute_map = [('car', 3, 2), ('motorcycle', 4, 1)]
@@ -65,3 +68,19 @@ def test_exit2():
 def test_lot_reassignment():
     assigned, time_in, veh_type = carpark1.vehicle_entry('car', 'new_plate', 1613599730)
     assert assigned + 1 == 2
+
+def test_print_statements():
+    with open("sample_input.txt") as file_lines:
+        with open('temp.txt', 'w') as w:
+            sys.stdout = w
+            bootstrap_data(file_lines)
+    assert filecmp.cmp('temp.txt', './golden_unit_test_result/result_unit_test6 - Given Input.txt') == True
+    os.remove('temp.txt')
+
+def test_exception_statements():
+    with open("./golden_unit_test/unit_test7 - Exception Messaging.txt") as file_lines:
+        with open('temp.txt', 'w') as w:
+            sys.stdout = w
+            bootstrap_data(file_lines)
+    assert filecmp.cmp('temp.txt', './golden_unit_test_result/result_unit_test7 - Exception Messaging.txt') == True
+    os.remove('temp.txt')
