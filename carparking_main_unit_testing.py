@@ -56,8 +56,12 @@ def test_exit1():
     assert billed == 2
 
 def test_exit2():
-    plate, exit_time = 'SGX1234A', 1613545602
+    plate, exit_time = 'SGP2937F', 1613559745
     vehicle_type, plate, billed = carpark1.vehicle_exit(plate, exit_time)
-    assert vehicle_type == 'motorcycle'
-    assert plate == 'SGX1234A'
-    assert billed == 2
+    assert vehicle_type == 'car'
+    assert plate == 'SGP2937F'
+    assert billed == 8
+
+def test_lot_reassignment():
+    assigned, time_in, veh_type = carpark1.vehicle_entry('car', 'new_plate', 1613599730)
+    assert assigned + 1 == 2
